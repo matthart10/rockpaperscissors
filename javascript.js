@@ -1,7 +1,20 @@
 function getHumanChoice() {
-    let humanChoice = prompt("Rock, Paper or Scissors?");
-    return humanChoice = humanChoice.toLowerCase();
-}
+    let checker = true;
+    let humanChoice = "";
+    while (checker) {
+        humanChoice = prompt("Rock, Paper or Scissors?");
+        humanChoice = humanChoice.toLowerCase();
+        let choice1 = "rock";
+        let choice2 = "paper";
+        let choice3 = "scissors";
+        if (humanChoice.localeCompare(choice1) == 0 || humanChoice.localeCompare(choice2) == 0 || humanChoice.localeCompare(choice3) == 0) {
+            checker = false;
+        } else {
+            console.log("Not an option, try again.");
+        }
+    }
+    return humanChoice;
+    }
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random()*10);
@@ -12,12 +25,18 @@ function getComputerChoice() {
     } else {
         computerChoice = "scissors";
     }
+    return computerChoice;
 }
+
+
 
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
+
+for (let i = 0; i < 5; i++) {
+
+    function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "scissors") {
         console.log("You win! Rock beats Scissors.");
         humanScore = humanScore + 1;
@@ -43,4 +62,12 @@ function playRound(humanChoice, computerChoice) {
         console.log("You win! Scissors beats Paper.");
         humanScore = humanScore + 1;
     }
+}
+
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+console.log("Your score: " + humanScore + " Computer score: " + computerScore);
 }
