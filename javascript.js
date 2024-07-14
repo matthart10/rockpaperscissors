@@ -33,6 +33,7 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+console.log("Welcome to the Rock, Paper, Scissors game! You will play 5 rounds with the computer!");
 
 for (let i = 0; i < 5; i++) {
 
@@ -67,6 +68,7 @@ for (let i = 0; i < 5; i++) {
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
+
 
 playRound(humanSelection, computerSelection);
 console.log("Your score: " + humanScore + " Computer score: " + computerScore);
