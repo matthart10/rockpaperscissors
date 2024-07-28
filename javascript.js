@@ -6,11 +6,17 @@ const btnScissors = document.querySelector("#scissors");
 const winnerRoundReport = document.querySelector("#winnerRound");
 const scoreReport = document.querySelector("#score");
 const winnerReport = document.querySelector("#finalWinner");
+const intro = document.querySelector("#intro")
 let humanScore = 0;
 let computerScore = 0;
 var pRound = document.createElement("p");
 var pWinner = document.createElement("p");
 var pScore = document.createElement("p");
+var pIntro = document.createElement("p");
+
+
+pIntro.textContent = "Welcome to the Rock, Paper, Scissors game! You will play until someone has 5 wins!";
+intro.appendChild(pIntro);
 
 btnRock.addEventListener("click", () => {
     rockChosen();
@@ -57,9 +63,6 @@ function getComputerChoice() {
     }
     return computerChoice;
 }
-
-console.log("Welcome to the Rock, Paper, Scissors game! You will play until someone has 5 wins!");
-
 
     function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "scissors") {
